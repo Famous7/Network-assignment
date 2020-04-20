@@ -8,11 +8,9 @@ Please type 'pingall' in a mininet console, as soon as you execute the shortest.
 
 1. Launch command
  
- ```ryu-manager shortest.py --observe-links```
- 
- ```mininet> pingall```
- 
- ```mininet> h1 ping -c1 h5```
+ ```ryu-manager shortest.py --observe-links
+ mininet> pingall
+ mininet> h1 ping -c1 h5```
 
 2. Print out the shortest path between two host in the network topology
 ```
