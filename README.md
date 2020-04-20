@@ -8,9 +8,11 @@ Please type 'pingall' in a mininet console, as soon as you execute the shortest.
 
 1. Launch command
  
- ```ryu-manager shortest.py --observe-links
+ ```
+ ryu-manager shortest.py --observe-links
  mininet> pingall
- mininet> h1 ping -c1 h5```
+ mininet> h1 ping -c1 h5
+ ```
 
 2. Print out the shortest path between two host in the network topology
 ```
@@ -21,9 +23,10 @@ shortest path = host[00:00:00:00:00:02] -> sw[2] -> sw[1] -> sw[4] -> host[00:00
 
 1. Launch command
 
- ```ryu-manager netstats.py --observe-links```
- 
- ```mininet> pingall```
+ ```
+ ryu-manager netstats.py --observe-links
+ mininet> pingall
+ ```
 
 2. Print out the information about port_stats_reply and flow_stats_reply every 5 seconds
 ```
@@ -54,21 +57,16 @@ Please type 'pingall' in a mininet console, as soon as you execute the nettap.py
 
 1. Launch command
 
- ```python nettap_Topo.py```
- 
- ```ryu-manager netstats.py --observe-links```
- 
- ```mininet> pingall```
- 
- ```mininet> xterm h1 h2 h4```
- 
- ```h1> tcpdump -i h1-eth0 -xx tcp```
- 
- ```h2> tcpdump -i h2-eth0 -xx tcp```
- 
- ```h4> python -m SimpleHTTPServer 80```
- 
- ```mininet> h2 curl http://10.0.0.4:80```
+ ```
+ python nettap_Topo.py
+ ryu-manager netstats.py --observe-links
+ mininet> pingall
+ mininet> xterm h1 h2 h4
+ h1> tcpdump -i h1-eth0 -xx tcp
+ h2> tcpdump -i h2-eth0 -xx tcp
+ h4> python -m SimpleHTTPServer 80
+ mininet> h2 curl http://10.0.0.4:80
+ ```
 
 2. The results for tcpdump in h1 and h2 are same
 ```
@@ -89,19 +87,15 @@ Please type 'pingall' in a mininet console, as soon as you execute the LB.py
 
 1. Launch command
 
- ```python LB_Topo.py```
- 
- ```ryu-manager LB.py --observe-links```
- 
- ```mininet> pingall```
- 
- ```mininet> xterm h1 h2 h4```
- 
- ```h1> python -m SimpleHTTPServer 80```
- 
- ```h2> python -m SimpleHTTPServer 80```
- 
- ```h3> curl http://10.0.0.100:80```
+ ```
+ python LB_Topo.py
+ ryu-manager LB.py --observe-links
+ mininet> pingall
+ mininet> xterm h1 h2 h4
+ h1> python -m SimpleHTTPServer 80
+ h2> python -m SimpleHTTPServer 80
+ h3> curl http://10.0.0.100:80
+ ```
 
  2. The controller selects new serving server between h1 and h2 according to bps for both port associated h1 and h2.
  ```
