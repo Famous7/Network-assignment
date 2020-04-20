@@ -9,7 +9,7 @@ Please type 'pingall' in a mininet console, as soon as you execute the shortest.
 1. Launch command
  
  ```
- ryu-manager shortest.py --observe-links
+ # ryu-manager shortest.py --observe-links
  mininet> pingall
  mininet> h1 ping -c1 h5
  ```
@@ -24,7 +24,7 @@ shortest path = host[00:00:00:00:00:02] -> sw[2] -> sw[1] -> sw[4] -> host[00:00
 1. Launch command
 
  ```
- ryu-manager netstats.py --observe-links
+ # ryu-manager netstats.py --observe-links
  mininet> pingall
  ```
 
@@ -58,8 +58,8 @@ Please type 'pingall' in a mininet console, as soon as you execute the nettap.py
 1. Launch command
 
  ```
- python nettap_Topo.py
- ryu-manager netstats.py --observe-links
+ # python nettap_Topo.py
+ # ryu-manager netstats.py --observe-links
  mininet> pingall
  mininet> xterm h1 h2 h4
  h1> tcpdump -i h1-eth0 -xx tcp
@@ -88,8 +88,8 @@ Please type 'pingall' in a mininet console, as soon as you execute the LB.py
 1. Launch command
 
  ```
- python LB_Topo.py
- ryu-manager LB.py --observe-links
+ # python LB_Topo.py
+ # ryu-manager LB.py --observe-links
  mininet> pingall
  mininet> xterm h1 h2 h4
  h1> python -m SimpleHTTPServer 80
